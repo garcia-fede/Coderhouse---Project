@@ -13,6 +13,21 @@ nav{
     border-bottom: 2px solid rgb(255, 255, 255);
 }
 
+#cart{
+    margin-left: 2vw;
+}
+
+#greeting{
+    font-size: 30px
+}
+
+#cart:hover{
+    color: rgb(223, 187, 27);
+    transform: scale(1.5,1.5);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
 nav h1{
     position: absolute;
     left:5vw;
