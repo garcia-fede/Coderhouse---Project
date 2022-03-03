@@ -1,10 +1,11 @@
 import ItemListContainer from './ItemListContainer'
 
 const Main = () => {
+  const greeting = "Bienvenido a mi E-Commerce"
   return (
     <>
       <main>
-        <ItemListContainer />
+        <ItemListContainer greeting={greeting} />
       </main>
     </>
     
