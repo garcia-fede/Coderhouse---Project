@@ -8,7 +8,6 @@ const Main = () => {
         <ItemListContainer greeting={greeting} />
       </main>
     </>
-    
   )
 }
 

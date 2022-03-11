@@ -34,7 +34,7 @@ nav h1{
     top:5.5vh;
 }
 
-ul{
+nav ul{
     float:right;
     margin-right: 10vw;
     height:100%;
@@ -75,3 +75,57 @@ footer p{
     text-transform: uppercase;
 }
 
+
+.AUX{
+    height: 40vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    position: relative;
+}
+
+.AUX :hover{
+    transform: scale(1.015,1.015);
+    transition: 1s;
+}
+
+
+.AUX div{
+    margin-top: 1.25vw;
+    background: rgb(29, 27, 27);
+    width: 20vw;
+    height: 62.5vh;
+    border-radius: 15px;
+    border: white 1px solid;
+    box-shadow: 5px 7.5px 20px black;
+}
+
+.AUX p {
+    padding-top: 0.5rem;
+    text-align: center;
+}
+
+.AUX img{
+    margin: 1.25vw 1.25vw 0 1.25vw;
+    width: 17.5vw;
+    aspect-ratio: 1;
+    border-radius: 15px;
+}
+
+.AUX button{
+    width: 17.5vw;
+    margin: 15px 1.25vw;
+    border-radius: 7.5px;
+    border: white 1px solid;
+    padding: 12px;
+    background-color: rgb(255, 255, 255);
+}
+
+.AUX button:hover{
+    transition: 0.4s;
+    background-color: rgb(63, 63, 224);
+    color: black;
+    cursor: pointer;
+}
