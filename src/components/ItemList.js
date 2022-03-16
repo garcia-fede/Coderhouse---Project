@@ -4,11 +4,10 @@ import Item from './Item'
 const ItemList = ({item}) => {
 
     console.log(item)
-    console.log("Aux")
 
   return (
     <>
-        <ul className='AUX'>
+        <ul className='itemList'>
             {item.map((prod)=>{
                 return <Item producto = {prod} />
             })}      

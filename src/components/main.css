@@ -1,7 +1,6 @@
 *{
     margin:0;
     padding: 0;
-    font-weight: 00;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -58,7 +57,7 @@ ul li a:hover{
 main{
     background:#7070a7;
     width:100%;
-    height: 75vh;
+    height: 200vh;
 }
 
 footer{
@@ -76,9 +75,59 @@ footer p{
 }
 
 
-.AUX{
-    height: 40vh;
-    width: 100%;
+.itemDetail{
+    height: 90vh;
+    width: 80%;
+    margin:0 10%;
+    background: white;
+    border-radius: 1.5vw;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.itemDetail #descripcion{
+    display: grid;
+    margin: 0 auto;
+}
+
+.itemDetail h1 {
+    padding-bottom: 5vh;
+    font-size: 3rem;
+}
+
+.itemDetail h2{
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.itemDetail li {
+    font-size: 1.5rem;
+    padding: 0.25rem 0;
+}
+
+.itemDetail button{
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+    width: 15vw;
+}
+
+#descripcion{
+    width: 30vw;
+}
+
+.itemDetail img{
+    margin-left: 2.5vw;
+    height: 80vh;
+    aspect-ratio: 1;
+    border-radius: 5%;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+}
+
+.itemList{
+    height: 70vh;
+    width: 85%;
+    margin: 0 7.5%;
     color: white;
     display: flex;
     justify-content: space-evenly;
@@ -86,36 +135,36 @@ footer p{
     position: relative;
 }
 
-.AUX :hover{
-    transform: scale(1.015,1.015);
-    transition: 1s;
+.itemList :hover{
+    transform: scale(1.005,1.005);
+    transition: 0.2s;
 }
 
 
-.AUX div{
+.itemList div{
     margin-top: 1.25vw;
     background: rgb(29, 27, 27);
-    width: 20vw;
+    width: 17.5vw;
     height: 62.5vh;
     border-radius: 15px;
     border: white 1px solid;
     box-shadow: 5px 7.5px 20px black;
 }
 
-.AUX p {
+.itemList p {
     padding-top: 0.5rem;
     text-align: center;
 }
 
-.AUX img{
+.itemList img{
     margin: 1.25vw 1.25vw 0 1.25vw;
-    width: 17.5vw;
+    width: 15vw;
     aspect-ratio: 1;
     border-radius: 15px;
 }
 
-.AUX button{
-    width: 17.5vw;
+.itemList button{
+    width: 15vw;
     margin: 15px 1.25vw;
     border-radius: 7.5px;
     border: white 1px solid;
@@ -123,7 +172,7 @@ footer p{
     background-color: rgb(255, 255, 255);
 }
 
-.AUX button:hover{
+.itemList button:hover{
     transition: 0.4s;
     background-color: rgb(63, 63, 224);
     color: black;
