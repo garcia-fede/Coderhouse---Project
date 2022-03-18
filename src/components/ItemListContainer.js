@@ -2,33 +2,31 @@ import { useEffect } from "react"
 import ItemCount from "./ItemCount"
 import { useState } from "react"
 import ItemList from "./ItemList"
+import { toast } from 'react-toastify'
+import { useParams } from "react-router-dom"
 
-const ItemListContainer = ({greeting, productosDeCarga}) => {
+const ItemListContainer = ({productosDeCarga}) => {
   const [productos,setProductos] = useState([])
+  const {categoryId} = useParams()
   useEffect(()=>{
       const cargaDeDatos = new Promise ((res,rej)=>{
+        toast.loading("Los productos se estan cargando")
         setTimeout(()=>{
+          toast.dismiss()
           res(productosDeCarga)
         },2000)
       })
       cargaDeDatos
       .then((resultado)=>{
-        console.log("Se cargaron correctamente los datos en ItemListContainer")
         setProductos(resultado)
       })
       .catch((error)=>{
-        console.log(error)
+        toast.error("No se pudo cargar los productos correctamente")
       })
-  },[])
-
-  console.log("Productos actualmente:")
+  },[categoryId])
 
   return (
-    <>
-      {/* <div id="greeting">{greeting}</div>
-      <ItemCount stock={5} inicial={1} onAdd={()=>{}}/> */}
       <ItemList item = {productos} />
-    </>
   )
 }
 

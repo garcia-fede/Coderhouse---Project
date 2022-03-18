@@ -1,4 +1,3 @@
-import React from 'react'
 import Item from './Item'
 
 const ItemList = ({item}) => {
@@ -6,13 +5,11 @@ const ItemList = ({item}) => {
     console.log(item)
 
   return (
-    <>
         <ul className='itemList'>
             {item.map((prod)=>{
                 return <Item producto = {prod} />
             })}      
         </ul>
-    </>
   )
 }
 
