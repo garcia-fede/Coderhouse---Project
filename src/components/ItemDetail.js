@@ -23,9 +23,6 @@ const ItemDetail = ({item}) => {
                     <li>
                         Color: {item.color}
                     </li>
-                    <li>
-                        Stock disponible: {item.stock}
-                    </li>
                     <ItemCount stock={item.stock} inicial={1} onAdd={()=>{}} />
                 </ul>
             </div>

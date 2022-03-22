@@ -9,7 +9,6 @@ scrollbar-width: auto;
 scrollbar-color: #302b73 #1d1d2b;
 }
 
-/* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
 width: 10px;
 }
@@ -35,10 +34,6 @@ nav{
 #cart{
     margin-left: 2vw;
     color: white;
-}
-
-#greeting{
-    font-size: 30px
 }
 
 #cart:hover{
@@ -70,6 +65,7 @@ ul li a{
     margin-right: 25px;
     text-decoration: none;
     color:white;
+    font-size: 1rem;
 }
 ul li a:hover{
     transition: 0.2s;
@@ -79,6 +75,7 @@ ul li a:hover{
 main{
     background:#7070a7;
     width:100%;
+    min-height: 71.5vh;
     overflow: auto;
 }
 
@@ -98,12 +95,13 @@ footer p{
 
 main{
     padding-top: 1rem;
+    overflow-x: hidden;
 }
 
 .itemDetail{
     height: 80vh;
     width: 80%;
-    margin:0 10%;
+    margin:0 10% 2.5vh 10%;
     background: white;
     border-radius: 1.5vw;
     border: 1px solid black;
@@ -162,7 +160,7 @@ main{
     position: relative;
 }
 
-.itemList :hover{
+.itemList div:hover{
     transform: scale(1.015,1.015);
     transition: all 0.2s ease;
 }
@@ -171,7 +169,7 @@ main{
     margin-top: 1.25vw;
     background: rgb(29, 27, 27);
     width: 17.5vw;
-    height: 62.5vh;
+    max-height: 40vw;
     border-radius: 15px;
     border: white 1px solid;
     box-shadow: 5px 7.5px 20px black;
@@ -183,7 +181,7 @@ main{
 }
 
 .itemList img{
-    width: 17.5vw;
+    width: 100%;
     aspect-ratio: 1;
     border-radius: 15px 15px 0 0;
 }
@@ -202,4 +200,28 @@ main{
     background-color: rgb(63, 63, 224);
     color: black;
     cursor: pointer;
+}
+
+@media (max-width: 820px) {
+    .itemList div{
+        max-height: 50vh;
+        width: 12rem;
+    }
+    .itemList button{
+        margin: 15px 5vw;
+    }
+}
+@media (max-width: 370px) {
+    .itemList div{
+        height: 20vh;
+        font-size: 0.5rem;
+    }
+    .itemList p{
+        padding-top: 0.1rem;
+    }
+    .itemList button{
+        margin-top: 0;
+        padding: 1px;
+        font-size: 0.5rem;
+    }
 }
