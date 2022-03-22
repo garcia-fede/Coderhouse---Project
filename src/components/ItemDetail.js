@@ -1,3 +1,5 @@
+import ItemCount from "./ItemCount"
+
 const ItemDetail = ({item}) => {
     return (
         <div className='itemDetail'>
@@ -24,8 +26,8 @@ const ItemDetail = ({item}) => {
                     <li>
                         Stock disponible: {item.stock}
                     </li>
+                    <ItemCount stock={item.stock} inicial={1} onAdd={()=>{}} />
                 </ul>
-                <button>COMPRAR</button>
             </div>
     </div>
     )

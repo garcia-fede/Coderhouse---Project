@@ -4,6 +4,26 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+* {
+scrollbar-width: auto;
+scrollbar-color: #302b73 #1d1d2b;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+background: #1d1d2b;
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: #302b73;
+border-radius: 10px;
+border: 1px solid #000000;
+}
+
 nav{
     width: 100%;
     height:15vh;
@@ -59,12 +79,12 @@ ul li a:hover{
 main{
     background:#7070a7;
     width:100%;
-    height: 200vh;
+    overflow: auto;
 }
 
 footer{
     width: 100%;
-    height:10vh;
+    height:11vh;
     background:black;
     display: flex;
     align-items: center;
@@ -114,7 +134,8 @@ main{
 .itemDetail button{
     margin-top: 1.5rem;
     padding: 1rem 0;
-    width: 15vw;
+    width: 8vw;
+    margin-inline: 0.5rem;
 }
 
 #descripcion{
@@ -132,10 +153,11 @@ main{
 .itemList{
     height: 70vh;
     width: 85%;
-    margin: 0 7.5%;
+    margin: 5px 7.5%;
     color: white;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     list-style: none;
     position: relative;
 }
@@ -144,7 +166,6 @@ main{
     transform: scale(1.015,1.015);
     transition: all 0.2s ease;
 }
-
 
 .itemList div{
     margin-top: 1.25vw;
@@ -162,10 +183,9 @@ main{
 }
 
 .itemList img{
-    margin: 1.25vw 1.25vw 0 1.25vw;
-    width: 15vw;
+    width: 17.5vw;
     aspect-ratio: 1;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
 }
 
 .itemList button{
