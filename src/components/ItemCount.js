@@ -18,7 +18,6 @@ const ItemCount = ({inicial,stock, onAdd}) => {
 
     const enviarCantidad = ()=>{
         onAdd(cantidad)
-        console.log(cantidad)
         setCantidad(inicial)
     }
 

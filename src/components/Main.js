@@ -5,6 +5,9 @@ import { Route,Routes } from 'react-router-dom'
 import productos from './ListadoProductos'
 
 const Main = () => {
+  // for (const producto in productos){
+  //   producto.stock = localStorage.getItem(`stock${producto.id}`)
+  // }
   return (
       <main>
         <Routes>
