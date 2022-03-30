@@ -5,12 +5,15 @@ import "./components/main.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter } from "react-router-dom";
+import MiProvider from "./components/Context/CartContext";
 
 const General = ()=>{
     return (
         <BrowserRouter>
-            <Header />
-            <Main />
+            <MiProvider>
+                <Header />
+                <Main />
+            </MiProvider>  
             <Footer />
             <ToastContainer />            
         </BrowserRouter>

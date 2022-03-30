@@ -1,9 +1,7 @@
 import { useState } from "react"
-// <ItemCount stock={5} inicial={1} onAdd={()=>{}}/>
-// RETORNO TEMPORALMENTE DESHABILITADO DE ITEMLISTCONTAINER
 
 const ItemCount = ({inicial,stock, onAdd}) => {    
-
+    
     let [cantidad,setCantidad] = useState(inicial)
     const sumar = ()=>{
         if(cantidad<stock){
@@ -27,7 +25,7 @@ const ItemCount = ({inicial,stock, onAdd}) => {
             <div>Stock disponible: {stock}</div>
             <button onClick={sumar}>Sumar</button>
             <button onClick={restar}>Restar</button>
-            <button onClick={enviarCantidad}>Añadir al carrito</button>
+            <button onClick={enviarCantidad}>Confirmar cantidad</button>
         </>
     )
 }

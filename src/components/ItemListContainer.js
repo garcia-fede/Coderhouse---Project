@@ -14,7 +14,7 @@ const ItemListContainer = ({productosDeCarga}) => {
         setTimeout(()=>{
           toast.dismiss()
           res(productosDeCarga)
-        },2000)
+        },500)
       })
       cargaDeDatos
       .then((resultado)=>{

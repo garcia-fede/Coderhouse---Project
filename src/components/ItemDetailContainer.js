@@ -13,13 +13,13 @@ const ItemDetailContainer = ({productosDeCarga}) => {
             setTimeout(()=>{
             res(productosDeCarga)
             toast.dismiss()
-            },2000)
+            },500)
         })
         cargaDeDatos
         .then((resultado)=>{
             setProductos(resultado)
         })
-        .catch((error)=>{
+        .catch(()=>{
             toast.error("No se pudo cargar los productos correctamente")
         })
     },[])
@@ -30,7 +30,7 @@ const ItemDetailContainer = ({productosDeCarga}) => {
     return (
         <>        
             {producto.map((producto)=>{
-                return <ItemDetail item={producto}/>  
+                return <ItemDetail key={producto.id} item={producto}/>  
             })}        
         </>   
     )
