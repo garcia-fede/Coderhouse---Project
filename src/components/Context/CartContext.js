@@ -9,12 +9,16 @@ const MiProvider = ({children})=>{
     const [cantidadGeneral,setCantidadGeneral] = useState(0)
 
     const cleanCarrito = ()=>{
+        itemsCarrito.map(prod=>{
+            prod.stock=prod.stock+prod.cantidadCarrito
+        })
         setItemsCarrito([])
         setCantidadGeneral(0)
     }
 
     const disminuirCantidad = (producto)=>{
         if(producto.cantidadCarrito>=1){
+            producto.stock++
             producto.cantidadCarrito--
             setCantidadGeneral(cantidadGeneral-1)
         }
@@ -27,6 +31,7 @@ const MiProvider = ({children})=>{
         const index = itemsCarrito.findIndex(prod=>{
             return prod.id==producto.id
         })
+        producto.stock=producto.stock+producto.cantidadCarrito
         setCantidadGeneral(cantidadGeneral-producto.cantidadCarrito)
         itemsCarrito.splice(index,1)
     }
@@ -63,6 +68,8 @@ const MiProvider = ({children})=>{
         cleanCarrito,
         disminuirCantidad,
         descartarProducto,
+        setItemsCarrito,
+        setCantidadGeneral
     }
 
     return (

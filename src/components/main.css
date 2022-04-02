@@ -234,10 +234,6 @@ main{
 }
 
 .itemCartContainer{
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%,0);
     width: 50%;
     display: grid;
     justify-content: center;
@@ -315,6 +311,96 @@ main{
     background: red;
 }
 
+.Carrito{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bottomCart{
+    height: 10vh;
+    width: 50vw;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottomCart button{
+    padding: 1rem;
+    border-radius: 50vw;
+    background: black;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 900;
+}
+
+.bottomCart button:hover{
+    transition: all ease 0.2s;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transform: scale(1.05,1.05);
+    background: rgb(229, 215, 130);
+}
+
+.bottomCart button:active{
+    transition: all ease 0.1s;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transform: scale(1.05,1.05);
+    background: red;
+}
+
+#empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+#empty p {
+    padding: 3.5rem 2rem;    
+    width: 50vw;
+    background: white;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 50px;
+    font-family: 'Lora', serif;
+    font-weight: 700;    
+    font-size: 2rem;
+}
+
+#empty button{
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    color: white;
+    background: black;
+    text-transform: uppercase;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 700;
+}
+
+#empty button:hover{
+    transition: all ease 0.2s;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transform: scale(1.05,1.05);
+    background: rgb(229, 215, 130);
+}
+
+#empty button:active{
+    transition: all ease 0.1s;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transform: scale(1.05,1.05);
+    background: red;
+}
 
 @media (max-width: 820px) {
     .itemList div{

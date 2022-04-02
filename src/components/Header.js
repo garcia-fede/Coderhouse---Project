@@ -4,7 +4,7 @@ import { contexto } from "./Context/CartContext"
 import { useContext } from "react"
 
 const Header = () => {
-  const {cantidadGeneral,cleanCarrito} = useContext(contexto)
+  const {cantidadGeneral} = useContext(contexto)
   return (
     <>
         <nav>
@@ -16,7 +16,6 @@ const Header = () => {
                 <li><Link to="Categoria/Pantalones">Pantalones</Link></li>       
               <Link to="Carrito"><CartWidget /></Link>
               <span>{cantidadGeneral}</span>
-              <button onClick={cleanCarrito}>T</button>
             </ul>
         </nav>
     </>
