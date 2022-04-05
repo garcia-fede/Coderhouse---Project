@@ -38,7 +38,6 @@ const MiProvider = ({children})=>{
 
     const addItem = (producto,suma)=>{
         const auxiliar = itemsCarrito.slice(0)
-
         const esRepetido = auxiliar.some(existente =>{
             if(existente.id == producto.id){
                 existente.cantidadCarrito = existente.cantidadCarrito + suma 
@@ -58,7 +57,7 @@ const MiProvider = ({children})=>{
             setItemsCarrito(auxiliar)           
             setCantidadGeneral(cantidadGeneral+suma)
         }
-
+        
     }
 
     const contextValue = {
@@ -69,7 +68,7 @@ const MiProvider = ({children})=>{
         disminuirCantidad,
         descartarProducto,
         setItemsCarrito,
-        setCantidadGeneral
+        setCantidadGeneral,
     }
 
     return (

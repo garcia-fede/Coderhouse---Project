@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"
 import { toast } from "react-toastify"
 
 const Carrito = () => {
-
   const {itemsCarrito,disminuirCantidad,descartarProducto,cleanCarrito,setItemsCarrito,setCantidadGeneral} = useContext(contexto)
+
   const isEmpty = ()=>{
     if(itemsCarrito.length==0){
       return true      
@@ -28,7 +28,6 @@ const Carrito = () => {
     <>
       {
         cargaCarrito ? <div id="empty"><p>No hay productos seleccionados todavia</p><Link to="/"><button>Ir al catalogo</button></Link></div>
-        
         :                 
         <div className="Carrito">
           <ul className="itemCartContainer">
@@ -51,9 +50,11 @@ const Carrito = () => {
             ))}
         </ul>   
         <div className="bottomCart">
-          <Link to="/"><button>Seguir comprando</button></Link>
-          <button onClick={cleanCarrito}>Descartar productos</button>
-          <button onClick={terminarCompra}>Terminar compra</button>
+          <div>
+            <Link to="/"><button>Seguir comprando</button></Link>
+            <button onClick={cleanCarrito}>Descartar productos</button>
+            <button onClick={terminarCompra}>Terminar compra</button>
+          </div>
         </div>
       </div>
       }    

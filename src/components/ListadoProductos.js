@@ -49,7 +49,7 @@ const productos = [
     precio: 200,
     url: 'https://jfsarg.vtexassets.com/arquivos/ids/194685-800-auto?v=637611091141070000&width=800&height=auto&aspect=true',
     stock: 5,
-    color: "blanca",
+    color: "blanco",
     talle: 40,
     categoria:"Remeras",
     cantidadCarrito:0

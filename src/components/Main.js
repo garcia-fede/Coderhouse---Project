@@ -5,16 +5,13 @@ import { Route,Routes } from 'react-router-dom'
 import productos from './ListadoProductos'
 
 const Main = () => {
-  // for (const producto in productos){
-  //   producto.stock = localStorage.getItem(`stock${producto.id}`)
-  // }
   return (
       <main>
         <Routes>
-          <Route path="/" element={<ItemListContainer productosDeCarga = {productos} />} />
+          <Route path="/" element={<ItemListContainer />} />
           <Route path="Carrito" element={<Carrito />} />
-          <Route path="Categoria/:categoryId" element={<ItemListContainer productosDeCarga = {productos} />} />
-          <Route path="Producto/:id" element={<ItemDetailContainer productosDeCarga = {productos} />} />
+          <Route path="Categoria/:categoryId" element={<ItemListContainer/>} />
+          <Route path="Producto/:id" element={<ItemDetailContainer />} />
         </Routes>     
       </main>
   )

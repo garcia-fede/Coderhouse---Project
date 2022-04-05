@@ -1,35 +1,33 @@
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState,useEffect } from "react"
 import { toast } from 'react-toastify'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
+import { db } from "./firebase"
+import { collection,getDocs,query,where } from "firebase/firestore"
 
-const ItemDetailContainer = ({productosDeCarga}) => {
+const ItemDetailContainer = () => {
     const {id} = useParams()
     const [productos,setProductos] = useState([])
+
     useEffect(()=>{
-        toast.loading("Cargando producto")
-        const cargaDeDatos = new Promise ((res,rej)=>{
-            setTimeout(()=>{
-            res(productosDeCarga)
-            toast.dismiss()
-            },500)
-        })
-        cargaDeDatos
+        const productosCollection = collection(db,"productos")
+        const p = query(productosCollection,where("id","==",parseInt(id)))
+        const producto = getDocs(p)
+        producto
         .then((resultado)=>{
-            setProductos(resultado)
+            const itemDetail = resultado.docs.map((prod)=>{
+                return prod.data()
+            })
+            setProductos(itemDetail)
         })
         .catch(()=>{
-            toast.error("No se pudo cargar los productos correctamente")
+            toast.error("Se produjo un error al cargar el producto")
         })
     },[])
 
-    const producto = productos.filter((prod)=>{
-        return prod.id==id
-    })
     return (
         <>        
-            {producto.map((producto)=>{
+            {productos.map((producto)=>{
                 return <ItemDetail key={producto.id} item={producto}/>  
             })}        
         </>   
