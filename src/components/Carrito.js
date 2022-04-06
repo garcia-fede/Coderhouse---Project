@@ -1,7 +1,9 @@
 import { contexto } from "./Context/CartContext"
-import { useContext } from "react"
+import { useContext,useState } from "react"
 import { Link } from "react-router-dom"
 import { toast } from "react-toastify"
+import { db } from "./firebase"
+import { collection,serverTimestamp,addDoc } from "firebase/firestore"
 
 const Carrito = () => {
   const {itemsCarrito,disminuirCantidad,descartarProducto,cleanCarrito,setItemsCarrito,setCantidadGeneral} = useContext(contexto)
@@ -13,15 +15,36 @@ const Carrito = () => {
   }
   const cargaCarrito = isEmpty()
   const terminarCompra = ()=>{
-    toast.loading("Procesando compra")
-    setTimeout(()=>{
-      toast.dismiss()      
-      toast.success("Su compra ha sido realizada con exito")
-      setTimeout(()=>{
-        setItemsCarrito([])
-        setCantidadGeneral(0)
-      },1500)
-    },2000)
+    /*
+    AGREGAR setTotal
+    */
+    const comprador = {
+      buyer: {
+        nombre :"Lionel Messi",
+        telefono:"10/07/2021",
+        email:"campeon@copaamerica.com.ar"
+      },
+      items: itemsCarrito,
+      date: serverTimestamp(),
+      total: 0
+    }
+    const orden = collection(db, "ordenes")
+    const compra = addDoc(orden, comprador)
+    compra
+    .then((res)=>{
+        toast.loading("Procesando compra")
+        setTimeout(()=>{
+        toast.dismiss()      
+        toast.success("Su compra ha sido realizada con exito")
+        toast.info(`ID de orden: ${res.id}`)
+        setTimeout(()=>{
+          setItemsCarrito([])
+          setCantidadGeneral(0)
+        },1500)
+      },2000)
+    })
+    .catch()
+    
   }
 
   return (
