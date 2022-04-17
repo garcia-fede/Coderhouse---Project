@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <>
         <nav>
-            <Link to="/"><h1>BRAND</h1></Link>
+            <Link to="/"><h1>Compras Online</h1></Link>
             <ul>
                 <li><Link to="Categoria/Calzado">Calzado</Link></li>            
                 <li><Link to="Categoria/Remeras">Remeras</Link></li>            

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;500;600;700;800&family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap');
 
 *{
     margin:0;
@@ -26,13 +27,6 @@ border-radius: 10px;
 border: 1px solid #000000;
 }
 
-nav{
-    width: 100%;
-    height:15vh;
-    color: white;
-    background:#1d1d2b;
-    border-bottom: 2px solid rgb(255, 255, 255);
-}
 
 #cart{
     margin-left: 2vw;
@@ -46,12 +40,23 @@ nav{
     cursor: pointer;
 }
 
+nav{
+    width: 100%;
+    height:15vh;
+    color: white;
+    background:#1d1d2b;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
 nav h1{
     position: absolute;
     left:5vw;
-    top:5.5vh;
+    top:2.75vh;
     color: white;
-    float: left;
+    margin: 0;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: 900;
+    font-size: 2.25rem;
 }
 
 nav ul{
@@ -71,13 +76,20 @@ nav ul li a{
     color:white;
     font-size: 1rem;
 }
-nav ul li a:hover{
+nav ul li a:hover,nav h1:hover{
     transition: 0.2s;
     color: rgb(223, 187, 27);
 }
 
-nav ul li a:active{
-    color: red;
+nav h1:active{
+    transition: 0.1s;
+    transform: scale(1.1,1.1);
+}
+
+nav ul li a:focus{
+    color: lightblue;
+    padding:0 0 0.25rem 0;
+    border-bottom: 1px solid lightblue;
 }
 
 main{
@@ -318,17 +330,19 @@ main{
 }
 
 .bottomCart{
-    height: 10vh;
+    height: 12.5vh;
     width: 50vw;
     background: white;
     border-radius: 5px;
     border: 1px solid black;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
 .bottomCart button{
+    margin: 0 0.5rem;
     padding: 1rem;
     border-radius: 50vw;
     background: black;
@@ -352,6 +366,12 @@ main{
     cursor: pointer;
     transform: scale(1.05,1.05);
     background: red;
+}
+
+#totalCompra{    
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 #empty{
@@ -428,8 +448,8 @@ main{
 
 @keyframes agregadoCarrito {
     0%{transform: scale(1,1);}
-    25%{transform: scale(1.2,1.2);}
+    25%{transform: scale(1.1,1.1);}
     50%{transform: scale(1,1);}
-    75%{transform: scale(1.2,1.2);}
+    75%{transform: scale(1.1,1.1);}
     100%{transform: scale(1,1);}
 }

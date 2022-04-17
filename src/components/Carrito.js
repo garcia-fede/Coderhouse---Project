@@ -6,7 +6,7 @@ import { db } from "./firebase"
 import { collection,serverTimestamp,addDoc } from "firebase/firestore"
 
 const Carrito = () => {
-  const {itemsCarrito,disminuirCantidad,descartarProducto,cleanCarrito,setItemsCarrito,setCantidadGeneral} = useContext(contexto)
+  const {itemsCarrito,disminuirCantidad,descartarProducto,cleanCarrito,setItemsCarrito,setCantidadGeneral,setTotalCompra,totalCompra} = useContext(contexto)
 
   const isEmpty = ()=>{
     if(itemsCarrito.length==0){
@@ -15,9 +15,6 @@ const Carrito = () => {
   }
   const cargaCarrito = isEmpty()
   const terminarCompra = ()=>{
-    /*
-    AGREGAR setTotal
-    */
     const comprador = {
       buyer: {
         nombre :"Lionel Messi",
@@ -26,7 +23,7 @@ const Carrito = () => {
       },
       items: itemsCarrito,
       date: serverTimestamp(),
-      total: 0
+      total: {totalCompra}
     }
     const orden = collection(db, "ordenes")
     const compra = addDoc(orden, comprador)
@@ -40,11 +37,11 @@ const Carrito = () => {
         setTimeout(()=>{
           setItemsCarrito([])
           setCantidadGeneral(0)
+          setTotalCompra(0)
         },1500)
       },2000)
     })
     .catch()
-    
   }
 
   return (
@@ -73,6 +70,7 @@ const Carrito = () => {
             ))}
         </ul>   
         <div className="bottomCart">
+          <p id="totalCompra">Total de la compra: $ {totalCompra}</p>
           <div>
             <Link to="/"><button>Seguir comprando</button></Link>
             <button onClick={cleanCarrito}>Descartar productos</button>

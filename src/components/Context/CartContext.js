@@ -7,6 +7,7 @@ const MiProvider = ({children})=>{
     
     const [itemsCarrito,setItemsCarrito] = useState([])
     const [cantidadGeneral,setCantidadGeneral] = useState(0)
+    const [totalCompra,setTotalCompra] = useState(0)
 
     const cleanCarrito = ()=>{
         itemsCarrito.map(prod=>{
@@ -14,6 +15,7 @@ const MiProvider = ({children})=>{
         })
         setItemsCarrito([])
         setCantidadGeneral(0)
+        setTotalCompra(0)
     }
 
     const disminuirCantidad = (producto)=>{
@@ -21,6 +23,7 @@ const MiProvider = ({children})=>{
             producto.stock++
             producto.cantidadCarrito--
             setCantidadGeneral(cantidadGeneral-1)
+            setTotalCompra(totalCompra-producto.precio)
         }
         else if(producto.cantidadCarrito<=0){
             descartarProducto(producto)
@@ -33,6 +36,7 @@ const MiProvider = ({children})=>{
         })
         producto.stock=producto.stock+producto.cantidadCarrito
         setCantidadGeneral(cantidadGeneral-producto.cantidadCarrito)
+        setTotalCompra(totalCompra-(producto.cantidadCarrito*producto.precio))
         itemsCarrito.splice(index,1)
     }
 
@@ -56,8 +60,8 @@ const MiProvider = ({children})=>{
             auxiliar.push(producto)
             setItemsCarrito(auxiliar)           
             setCantidadGeneral(cantidadGeneral+suma)
+            setTotalCompra(totalCompra+(producto.precio*producto.cantidadCarrito))
         }
-        
     }
 
     const contextValue = {
@@ -69,6 +73,8 @@ const MiProvider = ({children})=>{
         descartarProducto,
         setItemsCarrito,
         setCantidadGeneral,
+        totalCompra,
+        setTotalCompra
     }
 
     return (
